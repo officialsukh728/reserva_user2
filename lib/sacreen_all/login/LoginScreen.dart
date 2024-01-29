@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:reserva_user/sacreen_all/Profile_sing.dart';
+import 'package:reserva_user/Password/Forgot_Password.dart';
+import 'package:reserva_user/sacreen_all/login/Profile_sing.dart';
 import 'package:reserva_user/utils/ElevatedButton.dart';
 import 'package:reserva_user/utils/TextField.dart';
 import 'package:reserva_user/utils/onpush.dart';
 
-import '../utils/AppConfig.dart';
+import '../../utils/AppConfig.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -129,21 +130,26 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 4,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    "Forgot Password?",
-                    style: TextStyle(
-                      fontFamily: "Jost",
-                      fontSize: 13.64039421081543,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xff777777),
-                      height: 20 / 13.64039421081543,
+                  child: InkWell(
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                        fontFamily: "Jost",
+                        fontSize: 13.64039421081543,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff777777),
+                        height: 20 / 13.64039421081543,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
+                    onTap: () {
+                      pushTo(context, ForgotPassword());
+                    },
                   ),
                 )
               ],
@@ -235,28 +241,31 @@ class _LoginScreenState extends State<LoginScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            "Don’t have an account? ",
-            style: const TextStyle(
-              fontSize: 16.788175582885742,
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              pushTo(context, Profile_Sing());
-            },
-            child: Text(
-              "Register",
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Don’t have an account? ",
               style: const TextStyle(
-                color: Color(0xffbd8d46),
                 fontSize: 16.788175582885742,
               ),
             ),
-          )
-        ],
+            InkWell(
+              onTap: () {
+                pushTo(context, Profile_Sing());
+              },
+              child: Text(
+                "Register",
+                style: const TextStyle(
+                  color: Color(0xffbd8d46),
+                  fontSize: 16.788175582885742,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

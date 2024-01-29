@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reserva_user/sacreen_all/LoginScreen.dart';
+import 'package:reserva_user/sacreen_all/login/LoginScreen.dart';
 import 'package:reserva_user/utils/ElevatedButton.dart';
 
 class LogoSacreen extends StatefulWidget {

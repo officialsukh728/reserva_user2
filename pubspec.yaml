@@ -38,6 +38,7 @@ flutter:
   assets:
     - assets/image_logo/
     - assets/image_logo/Frame.png
+    - assets/home_icons/
 
   # example:
   # fonts:
