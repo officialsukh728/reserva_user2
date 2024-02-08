@@ -1,15 +1,20 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:reserva_user/Homebuttonpusar/Favorite.dart';
 import 'package:reserva_user/logics/prociders/counter_provider.dart';
-import 'package:reserva_user/sacreen_all/home/homePage.dart';
+
+import '../Homebuttonpusar/home/homePage.dart';
+
+import 'package:velocity_x/velocity_x.dart';
 
 class Dashboard extends StatelessWidget {
+
   Dashboard({super.key});
 
   final iconsList = [
     Icons.home,
-    Icons.baby_changing_station,
+    Icons.favorite,
     Icons.chair,
     Icons.settings,
   ];
@@ -21,26 +26,25 @@ class Dashboard extends StatelessWidget {
         return Scaffold(
           body: IndexedStack(index: consumer.activeIndex, children: [
             HomePage(),
-            Scaffold(),
-            Scaffold(),
+            Favorite(),
+            Scaffold(appBar: AppBar(backgroundColor: Colors.cyan,)),
             Scaffold(),
             Scaffold(),
           ]),
           floatingActionButton: FloatingActionButton(
             shape: CircleBorder(),
             child: Icon(
+
               Icons.brightness_3,
             ),
-            onPressed: () {
-              consumer.onTap(2);
-            },
+            onPressed: () {consumer.onTap(2);},
           ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           bottomNavigationBar: AnimatedBottomNavigationBar.builder(
             itemCount: iconsList.length,
             tabBuilder: (int index, bool isActive) {
-              final color = isActive ? Colors.red : Colors.green;
+              final color = isActive ? Colors.deepOrangeAccent : Colors.black;
               return Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -54,12 +58,14 @@ class Dashboard extends StatelessWidget {
                 ],
               );
             },
-            activeIndex: consumer.activeIndex,
+            // ... rest of your AnimatedBottomNavigationBar configuration
+
+          activeIndex: consumer.activeIndex,
             splashSpeedInMilliseconds: 300,
-            notchSmoothness: NotchSmoothness.defaultEdge,
+            // notchSmoothness: NotchSmoothness.defaultEdge,
             gapLocation: GapLocation.center,
-            leftCornerRadius: 32,
-            rightCornerRadius: 32,
+            // leftCornerRadius: 32,
+            // rightCornerRadius: 32,
             onTap: (index) => consumer.onTap(index),
             shadow: const BoxShadow(
               blurRadius: 5,

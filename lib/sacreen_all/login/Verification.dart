@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:reserva_user/Homebuttonpusar/home/homePage.dart';
 import 'package:reserva_user/utils/onpush.dart';
 
-import '../home/homePage.dart';
 
 class Verification extends StatelessWidget {
   const Verification({super.key});
