@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           title: "Reserva User",
-          home: SeeAll(),
+          home: Dashboard(),
         ),
       ),
     );

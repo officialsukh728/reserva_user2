@@ -45,6 +45,7 @@ flutter:
     - assets/image_logo/Frame.png
     - assets/home_icons/
     - assets/home_display/
+    - assets/
 
   # example:
   # fonts:
