@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:reserva_user/logics/prociders/counter_provider.dart';
 import 'package:reserva_user/utils/AppConfig.dart';
 import 'package:reserva_user/utils/helper.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 
 class CardHome extends StatelessWidget {
   const CardHome({super.key});
@@ -14,7 +13,7 @@ class CardHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<CounterProvider>(
       builder: (BuildContext context, CounterProvider value, Widget? child) {
-        var color;
+
         return Column(
           children: [
             for (int index = 0; index < value.count; index++)
@@ -64,7 +63,7 @@ class CardHome extends StatelessWidget {
                                   TextSpan(
                                     text: 'Open',
                                     style: TextStyle(
-                                      color: Color(0xFF07C303),
+                                      color: const Color(0xFF07C303),
                                       fontSize: 9.sp,
                                       fontFamily: 'Jost',
                                       fontWeight: FontWeight.w500,
@@ -73,7 +72,7 @@ class CardHome extends StatelessWidget {
                                       TextSpan(
                                           text: ' 1 miles',
                                           style: TextStyle(
-                                            color: Color(0xFF9D9D9D),
+                                            color: const Color(0xFF9D9D9D),
                                             fontSize: 8.sp,
                                             fontFamily: 'Jost',
                                             fontWeight: FontWeight.w400,
@@ -100,7 +99,7 @@ class CardHome extends StatelessWidget {
                               ),
                               child: Row(
                                 children: [
-                                  Image(
+                                  const Image(
                                     image: AssetImage(
                                       "assets/home_display/Vector.png",
                                     ),
@@ -114,7 +113,7 @@ class CardHome extends StatelessWidget {
                                       fontFamily: "Jost",
                                       fontSize: 14.707317352294922.w,
                                       fontWeight: FontWeight.w400,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                     textAlign: TextAlign.left,
                                   )
@@ -131,11 +130,11 @@ class CardHome extends StatelessWidget {
                               decoration: ShapeDecoration(
                                 color:
                                     Colors.white.withOpacity(0.800000011920929),
-                                shape: OvalBorder(),
+                                shape: const OvalBorder(),
                               ),
                               child: Center(
                                 child: InkWell(
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.favorite,
                                   ),
                                   onTap: () {},
@@ -157,7 +156,7 @@ class CardHome extends StatelessWidget {
                                   fontFamily: "Jost",
                                   fontSize: 14.w,
                                   fontWeight: FontWeight.w500,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
 
                                 ),
                                 textAlign: TextAlign.start,
@@ -175,7 +174,7 @@ class CardHome extends StatelessWidget {
                                       fontFamily: "Jost",
                                       fontSize: 11.w,
                                       fontWeight: FontWeight.w300,
-                                      color: Color(0xff777777),
+                                      color: const Color(0xff777777),
 
                                     ),
                                     textAlign: TextAlign.left,
@@ -193,7 +192,7 @@ class CardHome extends StatelessWidget {
                                   fontFamily: "Jost",
                                   fontSize: 12.w,
                                   fontWeight: FontWeight.w500,
-                                  color: Color(0xff07c303),
+                                  color: const Color(0xff07c303),
                                 ),
                                 textAlign: TextAlign.end,
                               ),

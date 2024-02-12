@@ -17,3 +17,12 @@ class DashboardBottomNavigationProvider with ChangeNotifier {
     notifyListeners();
   }
 }
+
+class AddAnOccasionProvider with ChangeNotifier {
+  int groupValue = 0;
+
+  void onTap(int value) {
+    groupValue = value;
+    notifyListeners();
+  }
+}

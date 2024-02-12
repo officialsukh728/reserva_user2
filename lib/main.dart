@@ -31,6 +31,8 @@ class MyApp extends StatelessWidget {
           ),
           ChangeNotifierProvider<DashboardBottomNavigationProvider>(
             create: (_) => DashboardBottomNavigationProvider(),
+          ),ChangeNotifierProvider<AddAnOccasionProvider>(
+            create: (_) =>AddAnOccasionProvider(),
           )
         ],
         child: MaterialApp(
